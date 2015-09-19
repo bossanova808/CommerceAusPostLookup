@@ -1,0 +1,49 @@
+{% import "_includes/forms" as forms %}
+
+{% block content %}
+    <div class="commerceAusPostLookupSettings">
+        <h2>{{ name }}&nbsp;</h2>
+        <p><small>(Version {{ version }})</small></p>
+        <p>
+            Commerce Aus Post Lookup helps you set up an address form field for automatic lookup of correct Aus Post mailing details (suburb, postcode and state in one field).  Requires curl.
+            <br>For <a href="http://buildwithcraft.com" title="Craft CMS">Craft</a>, with <a href="http://buildwithmarket.com/" title="Craft Commerce">Commerce</a>.
+        </p>
+        <div>
+
+            <p>Debugging? Look in the plugin log for messages.  It's ok to leave this on really.</p>
+            {{
+                forms.lightswitch({
+                    onLabel:    "On",
+                    offLabel:   "Off",
+                    name:       "debug",
+                    on:         settings.debug,
+                })
+            }}
+
+            {{
+                forms.textField({
+                    id:             "apiKey",
+                    name:           "apiKey",
+                    label:          "Aus Post Developer API Key"|t,
+                    placeholder:    "4740bf77-f4bf-42a5-ad3d-c2ce7f06d3d2",
+                    instructions:   "Your Australia Post API key - get one at https://developers.auspost.com.au/ - you can do testing with 4740bf77-f4bf-42a5-ad3d-c2ce7f06d3d2 but do not use that on a live site!!"|t,
+                    value:          settings.apiKey,
+                    errors:         "",
+                })
+            }}
+
+            {{
+                forms.textField({
+                    id:             "urlPrefix",
+                    name:           "urlPrefix",
+                    label:          "Aus Post URL Prefix"|t,
+                    placeholder:    "",
+                    instructions:   "URL for the API your using - Aus Post domestic service is at auspost.com.au, so you'd normally use that."|t,
+                    value:          settings.urlPrefix,
+                    errors:         "",
+                })
+            }}
+
+
+        </div>
+{% endblock %}
