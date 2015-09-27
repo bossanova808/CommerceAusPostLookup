@@ -107,7 +107,8 @@ class CommerceAusPostLookupController extends Market_BaseFrontEndController
                                           'data' => array('postcode'    => $locality->postcode, 
                                                           'suburb'      => $locality->location, 
                                                           'stateName'   => $statesNameMap[$locality->state], 
-                                                          'stateId'     => $statesIDMap[$locality->state]
+                                                          'stateId'     => $statesIDMap[$locality->state],
+                                                          'state'       => $locality->state,
                                                           )
                                           )
                                 );

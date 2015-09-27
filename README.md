@@ -7,7 +7,7 @@ Makes it easier to set up a field that the user can fill in with either there po
 ## Requirements & Important Notes!
 
 * **Requires:** jquery autocomplete - https://github.com/devbridge/jQuery-Autocomplete
-* **Requires:** curl
+* **Requires:** curl support on your server
 
 **Currently uses hardcoded values for the states names so you MUST set up your states to match mine** - I will possible change this to either look up values in your database (or accept a pull request!), but I'm holding off on this for now as I presume Commerce will actually auto-populate this data on release.
 
@@ -142,6 +142,7 @@ I suggest you create a testing template somewhere you can use to set up your fir
                     <h3> Selected data: </h3>
                     Postcode: <span id="pc"></span> <br>
                     Suburb: <span id="suburb"></span> <br>
+                    State: <span id="state"></span> <br>
                     State ID: <span id="stateId"></span> <br>
                     State Name: <span id="stateName"></span> <br>
                 </div>
@@ -170,6 +171,7 @@ I suggest you create a testing template somewhere you can use to set up your fir
                         onSelect: function (suggestion) {
                                 $( "#pc" ).html(suggestion.data['postcode']);
                                 $( "#suburb" ).html(suggestion.data['suburb']);
+                                $( "#state" ).html(suggestion.data['state']);
                                 $( "#stateId" ).html(suggestion.data['stateId']);
                                 $( "#stateName" ).html(suggestion.data['stateName']);
                             }
