@@ -2,7 +2,7 @@
 
 Craft Commerce plugin for Australia Post API lookup of suburbs or postcodes
 
-Makes it easier to set up a field that the user can fill in with either there postcode or suburb details and get back verified data from Australia Post.
+Makes it easier to set up a field that the user can fill in with either their postcode or suburb details and get back verified data from Australia Post.
 
 ## Requirements & Important Notes!
 
