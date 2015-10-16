@@ -42,7 +42,7 @@ class CommerceAusPostLookupController extends Market_BaseFrontEndController
         $errors = array();
 
         //build the URL to the auspost API
-        $postcodeURL = 'http://' . $settings->urlPrefix . '/api/postcode/search.json?q=' . $_REQUEST['query'] . '&state=';
+        $postcodeURL = 'http://' . $settings->urlPrefix . '/api/postcode/search.json?q=' . urlencode($_REQUEST['query']) . '&state=';
 
         // Lookup domestic parcel types (different kinds of standard boxes etc)
         $ch = curl_init();
@@ -90,7 +90,7 @@ class CommerceAusPostLookupController extends Market_BaseFrontEndController
         //Process the results and put into a suggestions array - we just return this empty if there are no results
         $suggestions = array();
 
-        if($pcJSON->localities){
+        if(is_object($pcJSON->localities)){
             foreach($pcJSON->localities as $results){
                 //is there just one result?  If so needs to be in an array for following process
                 if($debug){
@@ -124,7 +124,7 @@ class CommerceAusPostLookupController extends Market_BaseFrontEndController
         }
 
         //Return no matter what - either results or an empty array which will prompt the not found message
-        $this->returnJson(["success"=>true, 'suggestions'=>$suggestions]);
+        $this->returnJson(["success"=>true, 'suggestions'=>$suggestions, 'pcJSON'=>$pcJSON]);
 
     }
 }
