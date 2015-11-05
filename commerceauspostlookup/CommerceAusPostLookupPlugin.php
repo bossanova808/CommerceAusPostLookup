@@ -13,12 +13,12 @@ class CommerceAusPostLookupPlugin extends BasePlugin
 
     function getName()
     {
-         return Craft::t('Aus Post Lookup for Commerce');
+         return Craft::t('Commerce Aus Post Lookup');
     }
 
     function getVersion()
     {
-        return '0.0.3';
+        return '0.0.4';
     }
 
     function getDeveloper()
@@ -28,8 +28,25 @@ class CommerceAusPostLookupPlugin extends BasePlugin
 
     function getDeveloperUrl()
     {
-        return '';
+        return 'https://github.com/bossanova808';
     }
+
+    function getDocumentationUrl(){
+        return 'https://github.com/bossanova808/CommerceAusPostLookup';
+    }
+
+    function getDescription(){
+        return 'Commerce Aus Post Lookup helps you set up an address form field for automatic lookup of correct Aus Post mailing details (suburb, postcode and state in one field).  Requires curl.';
+    }
+
+    function hasSettings(){
+        return true;
+    }
+
+    function getReleaseFeedUrl(){
+        return 'https://raw.githubusercontent.com/bossanova808/craft-plugin-updates/master/updates-commerceauspostlookup.json';
+    }
+
 
     public function defineSettings()
     {
@@ -49,6 +66,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
             'name'     => $this->getName(true),
             'version'  => $this->getVersion(),
             'settings' => $settings,
+            'description' => $this->getDescription(),
         );
 
         return craft()->templates->render('commerceauspostlookup/_settings', $variables);
