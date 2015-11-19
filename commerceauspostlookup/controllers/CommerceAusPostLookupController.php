@@ -2,7 +2,7 @@
 namespace Craft;
 
 
-class CommerceAusPostLookupController extends Market_BaseFrontEndController
+class CommerceAusPostLookupController extends BaseController
 {
 
     protected $allowAnonymous = true;
