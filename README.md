@@ -186,3 +186,7 @@ I suggest you create a testing template somewhere you can use to set up your fir
 {% includeJs js %}
 
 ```
+
+## Icon
+
+From the [Noun Project](https://thenounproject.com/) by Creative Stall
