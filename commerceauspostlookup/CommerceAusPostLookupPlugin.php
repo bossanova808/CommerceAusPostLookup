@@ -4,39 +4,51 @@ namespace Craft;
 class CommerceAusPostLookupPlugin extends BasePlugin
 {
 
+    private $version = "0.1.3";
+    private $schemaVersion = "0.0.0";
+
+    private $name = 'Commerce Aus Post Lookup';
+    private $description = 'Commerce Aus Post Lookup helps you set up an address form field for automatic lookup of correct Aus Post mailing details (suburb, postcode and state in one field).  Requires curl.';
+    private $documentationUrl = 'https://github.com/bossanova808/CommerceAusPostLookup';
+    private $developer = "Jeremy Daalder";
+    private $developerUrl = "https://github.com/bossanova808";
+    private $releaseFeedUrl = "https://raw.githubusercontent.com/bossanova808/CommerceAusPostLookup/master/releases.json";
+
     protected $settings;
 
-    public function init()
+    public function getName()
     {
-        $this->settings = $this->getSettings();
+        return $this->name;
     }
 
-    function getName()
+    public function getDescription()
     {
-         return Craft::t('Commerce Aus Post Lookup');
+        return $this->description;
     }
 
-    function getVersion()
+    public function getDocumentationUrl()
     {
-        return '0.1.1';
+        return $this->documentationUrl;
     }
 
-    function getDeveloper()
+    public function getVersion()
     {
-        return 'Jeremy Daalder';
+        return $this->version;
     }
 
-    function getDeveloperUrl()
+    public function getSchemaVersion()
     {
-        return 'https://github.com/bossanova808';
+        return $this->schemaVersion;
     }
 
-    function getDocumentationUrl(){
-        return 'https://github.com/bossanova808/CommerceAusPostLookup';
+    public function getDeveloper()
+    {
+        return $this->developer;
     }
 
-    function getDescription(){
-        return 'Commerce Aus Post Lookup helps you set up an address form field for automatic lookup of correct Aus Post mailing details (suburb, postcode and state in one field).  Requires curl.';
+    public function getDeveloperUrl()
+    {
+        return $this->developerUrl;
     }
 
     function hasSettings(){
@@ -44,7 +56,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
     }
 
     function getReleaseFeedUrl(){
-        return 'https://raw.githubusercontent.com/bossanova808/CommerceAusPostLookup/master/releases.json';
+        return $this->releaseFeedUrl;
     }
 
 
@@ -71,5 +83,12 @@ class CommerceAusPostLookupPlugin extends BasePlugin
 
         return craft()->templates->render('commerceauspostlookup/_settings', $variables);
 
-   }
+    }
+
+    public function init()
+    {
+        $this->settings = $this->getSettings();
+    }
+
+
 }
