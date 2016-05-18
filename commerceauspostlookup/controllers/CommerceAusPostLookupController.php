@@ -75,6 +75,7 @@ class CommerceAusPostLookupController extends BaseController
             "NSW" => "New South Wales",
             "QLD" => "Queensland",
             "TAS" => "Tasmania",
+            "ACT" => "Australian Captial Territory",
         );
 
         $statesIDMap = array(
@@ -85,6 +86,7 @@ class CommerceAusPostLookupController extends BaseController
             "NSW" => 5,
             "QLD" => 6,
             "TAS" => 7,
+            "ACT" => 8
         );
 
         //Process the results and put into a suggestions array - we just return this empty if there are no results

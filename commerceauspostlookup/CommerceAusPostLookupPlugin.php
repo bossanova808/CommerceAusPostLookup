@@ -18,7 +18,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
 
     function getVersion()
     {
-        return '0.1.0';
+        return '0.1.1';
     }
 
     function getDeveloper()
@@ -44,7 +44,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
     }
 
     function getReleaseFeedUrl(){
-        return 'https://raw.githubusercontent.com/bossanova808/craft-plugin-updates/master/updates-commerceauspostlookup.json';
+        return 'https://raw.githubusercontent.com/bossanova808/CommerceAusPostLookup/master/releases.json';
     }
 
 

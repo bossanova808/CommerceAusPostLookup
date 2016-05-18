@@ -11,7 +11,7 @@ Makes it easier to set up a field that the user can fill in with either their po
 
 **Currently uses hardcoded values for the states names so you MUST set up your states to match mine** - I will possible change this to either look up values in your database (or accept a pull request!), but I'm holding off on this for now as I presume Commerce will actually auto-populate this data on release.
 
-The order must match this (check your market_states table):
+The order must match this (check your commerce_states table):
 
 ```
         $statesNameMap = array(
@@ -22,6 +22,7 @@ The order must match this (check your market_states table):
             "NSW" => "New South Wales",
             "QLD" => "Queensland",
             "TAS" => "Tasmania",
+            "ACT" => "Australian Captial Territory",
         );
 
 
@@ -33,6 +34,7 @@ The order must match this (check your market_states table):
             "NSW" => 5,
             "QLD" => 6,
             "TAS" => 7,
+            "ACT" => 8
         );
 
 
