@@ -9,7 +9,7 @@ Makes it easier to set up a field that the user can fill in with either their po
 * **Requires:** jquery autocomplete - https://github.com/devbridge/jQuery-Autocomplete
 * **Requires:** curl support on your server
 
-**Currently uses hardcoded values for the states names so you MUST set up your states to match mine** - I will possible change this to either look up values in your database (or accept a pull request!), but I'm holding off on this for now as I presume Commerce will actually auto-populate this data on release.
+**Currently uses hardcoded values for the states names so you MUST set up your states to match mine** - I will possibly change this to either look up values in your database (or accept a pull request!), but I'm holding off on this for now as I presume Commerce will actually auto-populate this data on release.
 
 The order must match this (check your commerce_states table):
 
