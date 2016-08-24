@@ -9,7 +9,7 @@
         <hr>
         <div>
 
-            <p>Debugging? Look in the plugin log for messages.  It's ok to leave this on really.</p>
+            <h4>Debugging?</h4>
             {{
                 forms.lightswitch({
                     onLabel:    "On",
@@ -18,7 +18,9 @@
                     on:         settings.debug,
                 })
             }}
-
+            <p>Makes <code>LogLevel::Profile</code> log messages get logged.</p> 
+            <p><code>LogLevel::Warning</code> and <code>LogLevel::Error</code> are always logged.</p>
+            <hr>
             {{
                 forms.textField({
                     id:             "apiKey",
@@ -37,7 +39,7 @@
                     name:           "urlPrefix",
                     label:          "Aus Post URL Prefix"|t,
                     placeholder:    "",
-                    instructions:   "URL for the API your using - Aus Post domestic service is at auspost.com.au, so you'd normally use that."|t,
+                    instructions:   "URL for the API your using - Aus Post domestic service is at auspost.com.au, so you'd normally use that (don't enter a full url here)."|t,
                     value:          settings.urlPrefix,
                     errors:         "",
                 })

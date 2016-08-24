@@ -1,20 +1,9 @@
 <?php
 namespace Craft;
 
-
 class CommerceAusPostLookupController extends BaseController
 {
-
     protected $allowAnonymous = true;
-
-    private function logError($error){
-        CommerceAusPostLookupPlugin::log($error, LogLevel::Error);
-    }
-
-    private function logInfo($message){
-        CommerceAusPostLookupPlugin::log($message, LogLevel::Info);
-    }
-
 
     public function actionLookup()
     {
@@ -31,9 +20,6 @@ class CommerceAusPostLookupController extends BaseController
         if(!$ajax){
             return;
         }
-
-        //Log stuff to our log?
-        $debug = $settings->debug;
 
         //We'll return all the POST data to the template, so kick of our return data with that...
         $vars = craft()->request->getPost();
@@ -95,11 +81,9 @@ class CommerceAusPostLookupController extends BaseController
         if(is_object($pcJSON->localities)){
             foreach($pcJSON->localities as $results){
                 //is there just one result?  If so needs to be in an array for following process
-                if($debug){
-                    $this->logInfo("Results: " . var_export($results,true));
-                }           
+                CommerceAusPostLookupPlugin::log("Results: " . var_export($results,true));     
                 if(is_object($results)){
-                    if($debug) $this->logInfo("Only one result returned");
+                    CommerceAusPostLookupPlugin::log("Only one result returned");
                     $results = array($results);
                 }
                 //now set up the data for return
@@ -118,10 +102,9 @@ class CommerceAusPostLookupController extends BaseController
             }
         }
 
-        //Log errors if debugging is on
-        if($errors and $debug){
+        if($errors){
             foreach($errors as $error){
-                $this->logError("Error: " . $error);
+                CommerceAusPostLookupPlugin::logError("Error: " . $error);
             }
         }
 

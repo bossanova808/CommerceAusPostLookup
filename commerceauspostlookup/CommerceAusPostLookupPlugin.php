@@ -4,7 +4,7 @@ namespace Craft;
 class CommerceAusPostLookupPlugin extends BasePlugin
 {
 
-    private $version = "0.1.3";
+    private $version = "0.1.4";
     private $schemaVersion = "0.0.0";
 
     private $name = 'Commerce Aus Post Lookup';
@@ -14,7 +14,39 @@ class CommerceAusPostLookupPlugin extends BasePlugin
     private $developerUrl = "https://github.com/bossanova808";
     private $releaseFeedUrl = "https://raw.githubusercontent.com/bossanova808/CommerceAusPostLookup/master/releases.json";
 
-    protected $settings;
+    static protected $settings;
+
+    /**
+     * Static log functions for this plugin
+     *
+     * @param mixed $msg
+     * @param string $level
+     * @param bool $force
+     *
+     * @return null
+     */
+    public static function logError($msg){
+        CommerceAusPostLookupPlugin::log($msg, LogLevel::Error, $force = true);
+    }
+    public static function logWarning($msg){
+        CommerceAusPostLookupPlugin::log($msg, LogLevel::Warning, $force = true);
+    }
+    // If debugging is set to true in this plugin's settings, then log every message, devMode or not.
+    public static function log($msg, $level = LogLevel::Profile, $force = false)
+    {
+        if(self::$settings['debug']) $force=true;
+
+        if (is_string($msg))
+        {
+            $msg = "\n\n" . $msg . "\n";
+        }
+        else
+        {
+            $msg = "\n\n" . print_r($msg, true) . "\n";
+        }
+
+        parent::log($msg, $level, $force);
+    }
 
     public function getName()
     {
