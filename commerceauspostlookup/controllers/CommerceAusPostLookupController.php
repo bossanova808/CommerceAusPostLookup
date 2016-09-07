@@ -103,9 +103,12 @@ class CommerceAusPostLookupController extends BaseController
         }
 
         if($errors){
+            $allErrors = "";
             foreach($errors as $error){
                 CommerceAusPostLookupPlugin::logError("Error: " . $error);
+                $allErrors .= "[". $error . "]";
             }
+            $this->returnJson(["success"=>false, 'suggestions'=>[], 'pcJSON'=>[], 'error' => $allErrors]);
         }
 
         //Return no matter what - either results or an empty array which will prompt the not found message

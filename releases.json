@@ -3,6 +3,14 @@
 
 [
     {
+        "version": "0.1.5",
+        "date": "2016-09-07T09:35:28+10:00",
+        "downloadUrl": "https://github.com/bossanova808/CommerceAusPostLookup/archive/0.1.5.zip",
+        "notes": [
+            "[Fixed] Better error logging again",
+        ]
+    },
+    {
         "version": "0.1.4",
         "date": "2016-08-24T09:35:28+10:00",
         "downloadUrl": "https://github.com/bossanova808/CommerceAusPostLookup/archive/0.1.4.zip",

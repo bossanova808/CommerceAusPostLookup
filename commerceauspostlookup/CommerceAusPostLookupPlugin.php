@@ -4,7 +4,7 @@ namespace Craft;
 class CommerceAusPostLookupPlugin extends BasePlugin
 {
 
-    private $version = "0.1.4";
+    private $version = "0.1.5";
     private $schemaVersion = "0.0.0";
 
     private $name = 'Commerce Aus Post Lookup';
@@ -14,7 +14,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
     private $developerUrl = "https://github.com/bossanova808";
     private $releaseFeedUrl = "https://raw.githubusercontent.com/bossanova808/CommerceAusPostLookup/master/releases.json";
 
-    static protected $settings;
+    protected static $settings;
 
     /**
      * Static log functions for this plugin
@@ -104,7 +104,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
     public function getSettingsHtml()
     {
 
-        $settings = $this->settings;
+        $settings = self::$settings;
 
         $variables = array(
             'name'     => $this->getName(true),
@@ -119,7 +119,7 @@ class CommerceAusPostLookupPlugin extends BasePlugin
 
     public function init()
     {
-        $this->settings = $this->getSettings();
+        self::$settings = $this->getSettings();
     }
 
 
