@@ -47,6 +47,7 @@ class CommerceAusPostLookupController extends BaseController
             $pcJSON = json_decode($rawBody);
         }
         catch (Exception $e) {
+            CommerceAusPostLookupPlugin::logError("Caught Exception in JSON decode: " . $e->getMessage());
             $errors[] = "Caught Exception in JSON decode: " . $e->getMessage();
         }
 
@@ -61,7 +62,7 @@ class CommerceAusPostLookupController extends BaseController
             "NSW" => "New South Wales",
             "QLD" => "Queensland",
             "TAS" => "Tasmania",
-            "ACT" => "Australian Captial Territory",
+            "ACT" => "Australian Capital Territory",
         );
 
         $statesIDMap = array(
@@ -100,6 +101,10 @@ class CommerceAusPostLookupController extends BaseController
                                 );
                 }
             }
+        }
+        else{
+            CommerceAusPostLookupPlugin::logError("pcJSON is not an object....");
+            $errors[] = "Invalid data returned from Australia Post - please try again in a new minutes";
         }
 
         if($errors){

@@ -4,7 +4,7 @@ namespace Craft;
 class CommerceAusPostLookupPlugin extends BasePlugin
 {
 
-    private $version = "0.1.5";
+    private $version = "0.1.6";
     private $schemaVersion = "0.0.0";
 
     private $name = 'Commerce Aus Post Lookup';
