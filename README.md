@@ -1,3 +1,11 @@
+# THIS PLUGIN IS ARCHIVED
+
+**With Craft Commerce 2 I have absorbed this into my custom business logic module and I do not have plans on releasing this publicly for Commerce 2 at this time (since I doubt anyone is using it!)**
+
+It remains here for anyone still using it with Commerce V1 but there will be no more support or updates.
+
+
+
 # Commerce Aus Post Lookup
 
 Craft Commerce plugin for Australia Post API lookup of suburbs or postcodes
